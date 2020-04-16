@@ -1,0 +1,16 @@
+<div class="form-group row" [formGroup]="form" >
+    <label [for]="fieldConfig.controlName" class="col-sm-2 col-form-label"> {{fieldConfig.controlName}}</label>
+    <div class="col-sm-10">
+        <input [formControlName]="fieldConfig.controlName" class="form-control" [type]="fieldConfig.valueType"
+            [name]="fieldConfig.controlName" autocomplete="new-password" />
+        <div class="error mt-1 alert alert-danger" role="alert" *ngIf="form.get(fieldConfig.controlName).invalid && 
+                      (form.get(fieldConfig.controlName).dirty || form.get(fieldConfig.controlName).touched)">
+            <div *ngIf="form.get(fieldConfig.controlName).errors.required">Input required</div>
+            <div *ngIf="form.get(fieldConfig.controlName).errors.minlength">Minimum length is
+                {{fieldConfig.validators.minlength}}</div>
+            <div *ngIf="form.get(fieldConfig.controlName).errors.maxlength">Miximum length is
+                {{fieldConfig.validators.maxlength}}</div>
+            <div *ngIf="form.get(fieldConfig.controlName).errors.email">Enter a valid Email Address</div>
+        </div>
+    </div>
+</div>
