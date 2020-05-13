@@ -6,6 +6,8 @@ export interface FormData {
   controlName?: string;
   controlType?: string;
   valueType?: string;
+  hidden?:boolean;
+  disabled?:boolean;
   defaultValue?: string;
   order?: number;
   currentValue?: string;

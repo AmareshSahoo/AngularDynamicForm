@@ -1,6 +1,7 @@
+import { element } from 'protractor';
 import { FormData } from './../shared/form-data';
 import { MockForm } from './../shared/mock-data';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import { RegisterFormData } from '../shared/registerData';
 import { RegisterDataService } from '../shared/services/register-data.service';
 
@@ -9,9 +10,10 @@ import { RegisterDataService } from '../shared/services/register-data.service';
   templateUrl: './register-dynamic-form.component.html',
   styleUrls: ['./register-dynamic-form.component.sass']
 })
-export class RegisterDynamicFormComponent implements OnInit {
+export class RegisterDynamicFormComponent implements OnInit , AfterViewInit{
 
-  constructor() { }
+  constructor(private elRef:ElementRef) { 
+  }
 
   regdFormData= RegisterFormData;
   ngOnInit() {
@@ -19,12 +21,27 @@ export class RegisterDynamicFormComponent implements OnInit {
   }
 
   onFormSubmit(event){
-    console.log('onFormSubmit.....',event);
+    console.log('onFormSubmit.....',event.value);
   }
 
-  OnSubmitButton(data){
-    alert('HY');
-    console.log("clickParam",data);
+  onEvent(event){
+    console.log('event.....',event.value);
+    this.regdFormData[2]['disabled'] = true;
+    this.regdFormData[5]['options'] = [{optionName: "NA", value: "NA"}];
+  }
+
+  ngAfterViewInit(){
+    this.elRef.nativeElement.querySelector('#Email').addEventListener('click', 
+    this.onClick.bind(this));
+
+    this.elRef.nativeElement.querySelector('#Password').addEventListener('change', 
+    this.onClickPassword.bind(this));
+  }
+  onClick(){
+    alert("Hy");
+  }
+  onClickPassword(){
+    alert("By");
   }
 
 }

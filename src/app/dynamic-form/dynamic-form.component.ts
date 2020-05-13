@@ -11,6 +11,7 @@ export class DynamicFormComponent implements OnInit {
 
   @Input() formData: FormData[];
   @Output() onFormSubmit = new EventEmitter<any>();
+  @Output() Evnt = new EventEmitter<any>();
   form: FormGroup;
 
   constructor() {
@@ -33,6 +34,10 @@ export class DynamicFormComponent implements OnInit {
 
   submitForm(form) {
     this.onFormSubmit.emit(form);
+  }
+
+  onClickEvent(form){
+    this.Evnt.emit(form);
   }
 
 }

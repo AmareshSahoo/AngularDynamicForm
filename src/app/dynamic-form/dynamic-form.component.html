@@ -3,7 +3,7 @@
         <ng-container [ngSwitch]="input.controlType">
 
             <ng-template [ngSwitchCase]="'text'">
-                <app-textbox [form]="form" [fieldConfig]="input"></app-textbox>
+                <app-textbox [form]="form" (onClickEvent)="onClickEvent($event)"  [fieldConfig]="input"></app-textbox>
             </ng-template>
 
             <ng-template [ngSwitchCase]="'select'">
@@ -15,7 +15,7 @@
             </ng-template>
             
             <ng-template [ngSwitchCase]="'button'">
-                <app-button [form]="form" [fieldConfig]="input"></app-button>
+                <app-button  [form]="form" [fieldConfig]="input"></app-button>
             </ng-template>
            
         </ng-container>

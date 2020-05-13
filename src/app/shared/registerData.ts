@@ -10,11 +10,16 @@ export const RegisterFormData: FormData[] = [
         controlType: 'text',
         valueType: 'text',
         placeholder: 'Enter username',
+        hidden:false,
         validators: {
             required: true,
             minlength: 5
         },
         defaultValue: "amar@gmail.com",
+        clickEvent: {
+            methodName: "onClickUsername",
+            param: 'Data'
+        },
         order: 2
     },
     {
@@ -25,6 +30,10 @@ export const RegisterFormData: FormData[] = [
         validators: {
             required: true,
             minlength: 5
+        },
+        clickEvent: {
+            methodName: "onClickPass",
+            param: 'Data'
         },
         order: 3
     },
@@ -95,5 +104,5 @@ export const RegisterFormData: FormData[] = [
             methodName: "OnSubmitButton",
             param: 'Amaresh'
         }
-    },
+    }
 ].sort((a, b) => a.order - b.order);

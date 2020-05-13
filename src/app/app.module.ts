@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeDashboardModule } from './employee-dashboard/employee-dashboard.module';
-// import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MyserviceService } from './myservice.service';
 import { DynamicFormComponent } from './Dynamic-Form/Dynamic-Form.component';
@@ -33,8 +31,6 @@ import { ButtonComponent } from './widget/button/button.component';
    imports: [
       BrowserModule,
       AppRoutingModule,
-      //CustomerDashboardModule,
-      EmployeeDashboardModule,
       HttpClientModule,
       FormsModule, 
       ReactiveFormsModule, BrowserAnimationsModule,
