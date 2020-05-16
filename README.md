@@ -1,4 +1,4 @@
-# DemoApp By Amaresh Sahoo
+# DemoApp By Amaresh Kumar Sahoo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
