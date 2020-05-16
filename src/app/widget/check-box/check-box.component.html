@@ -1,8 +1,8 @@
 <div class="form-group row" [formGroup]="form">
     <label [for]="fieldConfig.controlName" class="col-sm-2 col-form-label"> {{fieldConfig.controlName}}</label>
     <div class="col-sm-10">
-        <mat-radio-group [formControlName]="fieldConfig.controlName">
-            <mat-radio-button *ngFor="let option of fieldConfig.options"  [value]="option.value">{{option.optionName}}
+        <mat-radio-group [formControlName]="fieldConfig.controlName" >
+            <mat-radio-button *ngFor="let option of fieldConfig.options"   [value]="option.value">{{option.optionName}}
             </mat-radio-button>
         </mat-radio-group>
     </div>

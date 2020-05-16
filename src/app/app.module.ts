@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MyserviceService } from './myservice.service';
 import { DynamicFormComponent } from './Dynamic-Form/Dynamic-Form.component';
 
 
@@ -17,6 +16,7 @@ import { CheckBoxComponent } from './widget/check-box/check-box.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ButtonComponent } from './widget/button/button.component';
+import { TemplateService } from './services/template.service';
 
 @NgModule({
    declarations: [
@@ -38,7 +38,7 @@ import { ButtonComponent } from './widget/button/button.component';
       MaterialModule
    ],
    providers: [
-      MyserviceService
+      TemplateService
    ],
    bootstrap: [
       AppComponent

@@ -18,10 +18,8 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
     console.log("Fileld Config,,",this.fieldConfig);
     // this.clickAction = this.fieldConfig['listeners'][0].eventName;
-    this.clickAction = this.fieldConfig['clickEvent'].methodName;
+    this.clickAction = this.fieldConfig['click'].methodName;
     // this.clickParam = this.fieldConfig['listeners'][0].param;
-
-    console.log("clickAction",this.clickAction);
   }
   
   OnSubmitButton(data){

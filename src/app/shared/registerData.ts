@@ -15,8 +15,8 @@ export const RegisterFormData: FormData[] = [
             required: true,
             minlength: 5
         },
-        defaultValue: "amar@gmail.com",
-        clickEvent: {
+        defaultValue: "amarr@gmail.com",
+        click: {
             methodName: "onClickUsername",
             param: 'Data'
         },
@@ -31,7 +31,7 @@ export const RegisterFormData: FormData[] = [
             required: true,
             minlength: 5
         },
-        clickEvent: {
+        click: {
             methodName: "onClickPass",
             param: 'Data'
         },
@@ -64,7 +64,7 @@ export const RegisterFormData: FormData[] = [
         validators: {
             required: true
         },
-        clickEvent: {
+        click: {
             methodName: "onClickGender",
             param: 'Amaresh'
         },
@@ -100,7 +100,7 @@ export const RegisterFormData: FormData[] = [
         controlType: 'button',
         type: "submit",
         addClass: 'btn btn-primary',
-        clickEvent: {
+        click: {
             methodName: "OnSubmitButton",
             param: 'Amaresh'
         }

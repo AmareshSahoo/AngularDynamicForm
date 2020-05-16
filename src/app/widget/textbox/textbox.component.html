@@ -2,7 +2,7 @@
     <label [for]="fieldConfig.controlName" class="col-sm-2 col-form-label"> {{fieldConfig.controlName}}</label>
     <div class="col-sm-10">
         <input [formControlName]="fieldConfig.controlName" class="form-control" [type]="fieldConfig.valueType"
-            [name]="fieldConfig.controlName" [id]="fieldConfig.controlName" [attr.disabled]="fieldConfig.disabled ? '' : null"  autocomplete="new-password" (click)="click()" />
+            [name]="fieldConfig.controlName" [id]="fieldConfig.controlName" [value]="fieldConfig.defaultValue ? fieldConfig.defaultValue : '' " [attr.disabled]="fieldConfig.disabled ? '' : null"  autocomplete="new-password" (click)="click($event)" />
         
         
             <div class="error mt-1 alert alert-danger" role="alert" *ngIf="form.get(fieldConfig.controlName).invalid && 

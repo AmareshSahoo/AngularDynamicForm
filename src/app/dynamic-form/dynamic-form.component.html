@@ -1,9 +1,8 @@
 <form [formGroup]="form" (submit)="submitForm(form)" autocomplete="off">
     <ng-template ngFor let-input [ngForOf]="formData">
         <ng-container [ngSwitch]="input.controlType">
-
             <ng-template [ngSwitchCase]="'text'">
-                <app-textbox [form]="form" (onClickEvent)="onClickEvent($event)"  [fieldConfig]="input"></app-textbox>
+                <app-textbox [form]="form"   [fieldConfig]="input"></app-textbox>
             </ng-template>
 
             <ng-template [ngSwitchCase]="'select'">
@@ -17,9 +16,8 @@
             <ng-template [ngSwitchCase]="'button'">
                 <app-button  [form]="form" [fieldConfig]="input"></app-button>
             </ng-template>
-           
+            
         </ng-container>
-       
     </ng-template>
 
     <!-- <button type="submit" class="btn btn-primary" [disabled]="form.invalid">

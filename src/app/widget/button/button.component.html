@@ -1,5 +1,5 @@
 <div [formGroup]="form" >
-    <button [type]="fieldConfig.type"  (click)="this[clickAction](fieldConfig['clickEvent'].param)" [class]="fieldConfig.addClass" >
+    <button [type]="fieldConfig.type" [id]="fieldConfig.controlName"  (click)="this[clickAction](fieldConfig['click'].param)" [class]="fieldConfig.addClass" >
         {{fieldConfig.placeholder}}
     </button>
 </div>
