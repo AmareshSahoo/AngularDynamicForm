@@ -28,7 +28,7 @@ export const RegisterFormData: FormData[] = [
         valueType: 'password',
         placeholder: 'Enter Password',
         validators: {
-            required: true,
+            required: false,
             minlength: 5
         },
         click: {

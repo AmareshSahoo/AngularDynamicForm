@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { element } from 'protractor';
 
 import { Component, OnInit, ElementRef, AfterViewInit, Input } from '@angular/core';
@@ -19,6 +20,7 @@ export class RegisterDynamicFormComponent implements OnInit, AfterViewInit {
 
   mThread: any[];
   regdFormData = RegisterFormData;
+  form: FormGroup;
   ngOnInit() {
     console.log('regdFormData.....', this.regdFormData);
 
@@ -26,21 +28,27 @@ export class RegisterDynamicFormComponent implements OnInit, AfterViewInit {
       this.tempservice.getThread().subscribe(res => {
         this.mThread = res;
         console.log("Mst", this.mThread);
+        this.getForm();
       });
     });
 
-    this.tempservice.getSubject().subscribe(res => {
+    this.tempservice.getSubject().subscribe((res: any[]) => {
       this.regdFormData = res;
     })
   }
 
-  onFormSubmit(event) {
-    console.log('onFormSubmit.....', event);
-  }
+
 
   OnformChange(event) {
     this.mThread = event;
     console.log('OnformChange.....', event);
+  }
+
+  getForm() {
+    this.tempservice.getForm().subscribe(res=>{
+      console.log("res Form==",res)
+      this.form = res;
+    })
   }
 
   DynamicallyGenerateMethod() {
@@ -70,20 +78,23 @@ export class RegisterDynamicFormComponent implements OnInit, AfterViewInit {
       this.onChange.bind(this));
   }
   onClickUsername() {
-    alert("Hy");
   }
   onClickPass() {
-    alert("Hy");
   }
   onClickGender() {
-    alert("Hy");
   }
+
   onChange() {
     console.log("Good To Go ");
     // this.tempservice.changeUI(this.regdFormData,["Username","Password"],"disabled",true);
     // this.tempservice.changeUI(this.regdFormData,["Username","Password"],"hidden",true);
     this.tempservice.changeUI(this.regdFormData, ["Username"], "defaultValue", "amar");
+    this.tempservice.changeUI(this.regdFormData, ["Password"], "required", true,"isValidation");
+    this.tempservice.changeUI(this.regdFormData, ["Password"], "maxlength", 10,"isValidation");
     console.log(this.regdFormData);
 
+  }
+  onFormSubmit(event) {
+    console.log('onFormSubmit.....', event.value);
   }
 }
