@@ -15,10 +15,18 @@ export class AppComponent {
   JsonData = [];
 
   constructor(private http: HttpClient) {
-    this.http.get("assets/mockData.json").subscribe((data:any) => {    
+    this.http.get("assets/mockData.json").subscribe((data:any) => {
       this.JsonData = data.FormData;
     })
     console.log('JsonData',this.JsonData);
-    console.log('MockData',this.MockData);     
+    console.log('MockData',this.MockData);
+  }
+
+  OnformChange(event) {
+    // this.mThread = event;
+    console.log("OnformChange.....", event);
+  }
+  onFormSubmit(event) {
+    console.log("onFormSubmit.....", event.value);
   }
 }

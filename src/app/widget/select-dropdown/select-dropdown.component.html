@@ -1,15 +1,14 @@
 <div class="form-group row" [formGroup]="form">
-    <label [for]="fieldConfig.controlName" class="col-sm-2 col-form-label"> {{fieldConfig.controlName}}</label>
+    <label [for]="fieldConfig['controlName']" class="col-sm-2 col-form-label"> {{fieldConfig['controlName']}}</label>
     <div class="col-sm-10">
-        <select [formControlName]="fieldConfig.controlName" [id]="fieldConfig.controlName" (click)="Click(fieldConfig);" class="form-control" [name]="fieldConfig.controlName"
-            [id]="fieldConfig.controlName">
-            <option value="">{{fieldConfig.placeholder}}</option>
-            <option *ngFor="let option of fieldConfig.options" [value]="option.value">{{option.optionName}}
+        <select [formControlName]="fieldConfig['controlName']" [id]="fieldConfig['controlName']" class="form-control" [name]="fieldConfig['controlName']" [id]="fieldConfig['controlName']">
+            <option value="">{{fieldConfig['placeholder']}}</option>
+            <option *ngFor="let option of fieldConfig['options']" [value]="option.value">{{option.optionName}}
             </option>
         </select>
-        <div class="error alert alert-danger mt-1" role="alert" *ngIf="form.get(fieldConfig.controlName).invalid && 
-                      (form.get(fieldConfig.controlName).dirty || form.get(fieldConfig.controlName).touched)">
-            <div *ngIf="form.get(fieldConfig.controlName).errors.required"> Required Field</div>
+        <div class="error alert alert-danger mt-1" role="alert" *ngIf="form.get(fieldConfig['controlName']).invalid &&
+                      (form.get(fieldConfig['controlName']).dirty || form.get(fieldConfig['controlName']).touched)">
+            <div *ngIf="form.get(fieldConfig['controlName']).errors.required"> Required Field</div>
         </div>
     </div>
 </div>

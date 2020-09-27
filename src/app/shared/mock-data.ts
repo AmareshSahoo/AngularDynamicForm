@@ -48,20 +48,38 @@ export const MockForm: FormData[] = [
       required: true
     }
   },
-
   {
     controlName: 'Vehicle you own',
     placeholder: 'Select vehicle',
     controlType: 'radio',
-    options: [{
-      optionName: 'I have a bike',
-      value: 'bike'
-    }, {
-      optionName: 'I have a car',
-      value: 'car'
-    }],
+    options: [
+      {
+        optionName: 'Yes',
+        value: 'Yes'
+      },
+      {
+        optionName: 'No',
+        value: 'No'
+      },
+      {
+        optionName: 'Both',
+        value: 'Both'
+      }
+    ],
+    defaultValue: "Yes",
     validators: {
       required: true
+    },
+    order: 5
+  },
+  {
+    controlName: 'SubmitButton',
+    placeholder: 'Submit',
+    controlType: 'button',
+    addClass: 'btn btn-primary',
+    click: {
+      methodName: "OnSubmitButton",
+      param: 'Amaresh'
     }
   }
 ];

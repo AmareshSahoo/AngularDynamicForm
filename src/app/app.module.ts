@@ -8,8 +8,6 @@ import { DynamicFormComponent } from './Dynamic-Form/Dynamic-Form.component';
 
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { RegisterDynamicFormComponent } from './register-dynamic-form/register-dynamic-form.component';
-import { WidgetModule } from './widget/widget.module';
 import { TextboxComponent } from './widget/textbox/textbox.component';
 import { SelectDropdownComponent } from './widget/select-dropdown/select-dropdown.component';
 import { CheckBoxComponent } from './widget/check-box/check-box.component';
@@ -17,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ButtonComponent } from './widget/button/button.component';
 import { TemplateService } from './services/template.service';
+import { RegisterDynamicFormComponent } from './register-dynamic-form/register-dynamic-form.component';
+import { NewFormComponent } from './new-form/new-form.component';
 
 @NgModule({
    declarations: [
@@ -26,15 +26,15 @@ import { TemplateService } from './services/template.service';
       TextboxComponent,
       SelectDropdownComponent,
       CheckBoxComponent,
-      ButtonComponent
+      ButtonComponent,
+      NewFormComponent,
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule, 
+      FormsModule,
       ReactiveFormsModule, BrowserAnimationsModule,
-      // WidgetModule
       MaterialModule
    ],
    providers: [
@@ -42,6 +42,8 @@ import { TemplateService } from './services/template.service';
    ],
    bootstrap: [
       AppComponent
-   ]
+   ],
+   entryComponents: [
+  ]
 })
 export class AppModule { }

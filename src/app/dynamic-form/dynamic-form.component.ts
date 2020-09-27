@@ -26,7 +26,7 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit() {
     this.generateFormControls();
-    
+
     this.tempservice.setForm(this.form);
     console.log("FormThreadData==", this.FormThreadData);
 
@@ -45,7 +45,7 @@ export class DynamicFormComponent implements OnInit {
     let formGroup = {};
     this.formData.forEach(formControl => {
       if (formControl['controlName'] && formControl['controlType'] !== "button") {
-        formGroup[formControl.controlName] = new FormControl(formControl.defaultValue,
+        formGroup[formControl['controlName']] = new FormControl(formControl.defaultValue,
           [
             formControl.validators ? formControl.validators.required ? Validators.required : Validators.nullValidator : Validators.nullValidator,
             formControl.validators ? formControl.validators.minlength ? Validators.minLength(formControl.validators.minlength) : Validators.nullValidator : Validators.nullValidator,
@@ -57,7 +57,7 @@ export class DynamicFormComponent implements OnInit {
     });
     this.form = new FormGroup(formGroup);
   }
-  
+
   OnChanges(): void {
     this.form.valueChanges.subscribe(value => {
       this.formChange.emit(value);
@@ -70,7 +70,7 @@ export class DynamicFormComponent implements OnInit {
           }else{
             console.log(false,value)
           }
-          
+
         }
       })
     })

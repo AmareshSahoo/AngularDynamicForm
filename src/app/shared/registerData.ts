@@ -3,9 +3,6 @@ import { FormData } from './../shared/form-data';
 
 export const RegisterFormData: FormData[] = [
     {
-        scriptName: "demoScript"
-    },
-    {
         controlName: 'Username',
         controlType: 'text',
         valueType: 'text',
@@ -20,7 +17,7 @@ export const RegisterFormData: FormData[] = [
             methodName: "onClickUsername",
             param: 'Data'
         },
-        order: 2
+        order: 2,
     },
     {
         controlName: 'Password',
