@@ -1,14 +1,14 @@
 <div class="form-group row" [formGroup]="form">
     <label [for]="fieldConfig['controlName']" class="col-sm-2 col-form-label"> {{fieldConfig['controlName']}}</label>
     <div class="col-sm-10">
-        <!-- <mat-radio-group [formControlName]="fieldConfig['controlName']">
+        <mat-radio-group [formControlName]="fieldConfig['controlName']">
             <mat-radio-button *ngFor="let option of fieldConfig['options']" [value]="option.value">{{option.optionName}}
             </mat-radio-button>
-        </mat-radio-group> -->
-
+        </mat-radio-group>
+        <!--
         <div class="form-check form-check-inline" *ngFor="let option of fieldConfig['options']">
             <input class="form-check-input" [value]="option.value" [formControlName]="fieldConfig['controlName']" type="radio">
             <label class="form-check-label" for="inlineRadio1">{{option.optionName}}</label>
-        </div>
+        </div> -->
     </div>
 </div>
