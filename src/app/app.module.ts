@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DynamicFormComponent } from './Dynamic-Form/Dynamic-Form.component';
+import { DynamicFieldDirective } from './dynamic-form/dynamic-field.directive';
 
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -22,6 +23,7 @@ import { NewFormComponent } from './new-form/new-form.component';
    declarations: [
       AppComponent,
       DynamicFormComponent,
+      DynamicFieldDirective,
       RegisterDynamicFormComponent,
       TextboxComponent,
       SelectDropdownComponent,
@@ -44,6 +46,10 @@ import { NewFormComponent } from './new-form/new-form.component';
       AppComponent
    ],
    entryComponents: [
+    TextboxComponent,
+    SelectDropdownComponent,
+    CheckBoxComponent,
+    ButtonComponent,
   ]
 })
 export class AppModule { }

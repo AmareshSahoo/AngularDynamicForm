@@ -1,5 +1,5 @@
 <form [formGroup]="form" (submit)="submitForm(form)" autocomplete="off">
-    <ng-template ngFor let-input [ngForOf]="formData">
+    <!-- <ng-template ngFor let-input [ngForOf]="formData">
         <ng-container [ngSwitch]="input.controlType">
             <ng-template [ngSwitchCase]="'text'">
                 <app-textbox [form]="form" [fieldConfig]="input"></app-textbox>
@@ -18,11 +18,16 @@
             </ng-template>
 
         </ng-container>
-    </ng-template>
+    </ng-template> -->
 
     <!-- <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
         Submit
     </button> -->
+    <ng-template ngFor let-input [ngForOf]="formData">
+        <ng-container dynamicField [fieldConfig]="input" [form]="form">
+        </ng-container>
+    </ng-template>
+
 </form>
 
 

@@ -75,7 +75,6 @@ export class DynamicFormComponent implements OnInit {
       })
     })
     this.form.updateValueAndValidity();
-
   }
 
   get FormThreadData() {
